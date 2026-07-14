@@ -34,5 +34,7 @@ runs:
         chmod +x $GITHUB_ACTION_PATH/goodbye.sh
         $GITHUB_ACTION_PATH/goodbye.sh
       shell: bash
+      env:
+        GITHUB_ACTION_PATH: ${{ github.action_path }}
 
 
