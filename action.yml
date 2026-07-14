@@ -1,0 +1,26 @@
+name: 'Current Time'
+description: 'Print current time'
+inputs:
+  who-to-greet:
+    description: 'Who to greet'
+    required: true
+    default: 'World'
+outputs:
+  current-time:
+    description: "Current timer"
+    value: ${{ steps.random-number-generator.outputs.current-time }}
+runs:
+  using: "composite"
+  steps:
+    - name: Set Greeting
+      run: echo "Hello $INPUT_WHO_TO_GREET."
+      shell: bash
+      env:
+        INPUT_WHO_TO_GREET: ${{ inputs.who-to-greet }}
+
+    - name: Current time
+      id: current-time
+      run: echo "current-time=$(echo date +'%T')" >> $GITHUB_OUTPUT
+      shell: bash
+
+
