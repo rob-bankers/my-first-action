@@ -32,7 +32,7 @@ runs:
     - name: Run goodbye.sh
       run: |
         chmod +x $GITHUB_ACTION_PATH/goodbye.sh
-        goodbye.sh
+        $GITHUB_ACTION_PATH/goodbye.sh
       shell: bash
 
 
