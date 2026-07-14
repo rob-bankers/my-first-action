@@ -20,7 +20,7 @@ runs:
 
     - name: Current time
       id: current-time
-      run: echo "current-time=$(echo date +'%T')" >> $GITHUB_OUTPUT
+      run: echo "current-time=$(date +'%T')" >> $GITHUB_OUTPUT
       shell: bash
 
     - name: Set GitHub Path
